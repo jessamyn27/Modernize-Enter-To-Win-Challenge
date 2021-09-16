@@ -300,8 +300,10 @@ main {
     }
     .form {
         height: 50%;
-        width: 100%;
+        width: 87%;
         min-width: 200px;
+        margin-left: auto;
+        margin-right: auto;
     }
     .form__header {
         min-height: 127px;
@@ -316,5 +318,27 @@ main {
     }
     #form__btn-submitted {
         padding: 8px 56px 8px 56px;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .ad {
+        height: 50%;
+        width: 100%;
+        min-width: 200px;
+    }
+    .ad__headline {
+        word-wrap: no-wrap;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .ad__border--green,
+    .ad__bg {
+        max-width: 200px;
+        margin-left: auto;
+        margin-right: auto;
+        height: auto;
+        padding-left: 10px;
+        padding-right: 10px;
     }
 }
