@@ -19,7 +19,7 @@ form.addEventListener("submit", (e) => {
     e.preventDefault();
 
     let data = {
-        name: username.name,
+        name: username.value,
         city: city.value,
         state: state.value,
         phone: phone.value,
@@ -55,7 +55,7 @@ form.addEventListener("submit", (e) => {
         btnEnter.classList.add('hide')
         btnSubmitted.classList.remove('hide');
         // ajax call
-        $.post(requestUrl, JSON.stringify(data), (data, status) => {
+        $.post('https://formsws-hilstaging-com-0adj9wt8gzyq.runscope.net/solar', JSON.stringify(data), (data, status) => {
             console.log(data, `${status} POST data submitted`);
         })
     } else {
