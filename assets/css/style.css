@@ -3,6 +3,9 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+
+/* global color variables */
+
 :root {
     --dark-bg: #555253;
     --dark-text: #979797;
@@ -17,31 +20,49 @@
     --orange-btn: #F6931D;
     --red-validate: #D50303;
     --blue-link: #72B9C4;
+    --gradient-one: #ECF8FB;
+    --gradient-two: #EFEFEF;
+    --gradient-trans: transparent;
 }
-
-
-/* --font-light: font-weight: 300;
---font-reg: font-weight: 400;
---font-semibold: font-weight: 600; */
-
-
-/* #div1 {
-    background-color: var(--main-bg-color);
-} */
 
 body {
     margin: 0;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
     justify-content: flex-start;
-    background-image: url('../images/background.png');
-    background-color: linear-gradient(0deg, #ECF8FB 0%, #EFEFEF 63%);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    line-height: 1.4;
+    background-image: url('../images/tile.png');
+    z-index: -999;
 }
+
+.gradient {
+    /* transition: background-position 5s; */
+    background-size: 100% 1000%;
+    font: 0;
+    position: absolute;
+    z-index: -9999;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-image: linear-gradient(180deg, var(--gradient-trans), var(--gradient-one), var(--gradient-two), var(--gradient-trans));
+    background-position: center bottom;
+    animation: gradient 10s ease-in-out infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: center bottom;
+    }
+    50% {
+        background-position: center top;
+    }
+    100% {
+        background-position: center bottom;
+    }
+}
+
+
+/* main container for both cards */
 
 main {
     flex-wrap: wrap;
@@ -50,30 +71,34 @@ main {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 50px;
+    line-height: 1.4;
+    z-index: 99999;
 }
+
+
+/* header  */
 
 .header {
     text-align: center;
-    /* display: flex; */
     justify-content: center;
     height: 100px;
     min-width: 100%;
     margin: 0 auto;
-    /* padding: 2.5rem; */
+    z-index: 99999;
 }
 
 .header--bg {
     background-color: var(--dark-bg);
+    z-index: 99999;
 }
-
-
-/* .header__logo {
-    justify-content: center;
-} */
 
 .header__img {
     padding-top: 25px;
+    z-index: 99999;
 }
+
+
+/* input form card */
 
 .form {
     flex: 0 auto;
@@ -85,6 +110,7 @@ main {
     box-shadow: 0px 3px 10px 3px var(--light-shadow);
     flex-wrap: wrap;
     flex-direction: row;
+    z-index: 99999;
 }
 
 .form__header {
@@ -152,12 +178,6 @@ main {
     color: var(--dark-text);
 }
 
-
-/* .form__text:invalid {
-    color: var(--red-validate);
-    border: 1px solid var(--red-validate);
-} */
-
 .form__btn {
     margin-top: 10px;
 }
@@ -173,14 +193,13 @@ main {
     margin-bottom: 20px;
 }
 
+
+/* advertisement card */
+
 .ad {
     flex: 0 auto;
     margin-top: 30px;
-    /* background-color: var(--light-bg); */
-    /* text-align: center; */
-    /* box-shadow: 0px 3px 10px 3px var(--light-shadow); */
-    /* margin-left: auto;
-    margin-right: auto; */
+    z-index: 99999;
 }
 
 .ad__border--green {
@@ -189,7 +208,6 @@ main {
     width: 360px;
     margin-left: auto;
     margin-right: auto;
-    /* border-top-color: transparent; */
 }
 
 .ad__headline {
@@ -231,6 +249,9 @@ main {
     font-size: 13px;
 }
 
+
+/* global validation classes */
+
 .required-border {
     border-color: var(--red-validate);
     margin-bottom: 1px;
@@ -241,22 +262,7 @@ main {
 }
 
 
-/* .row {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    /* margin-left: -1.5rem; */
-
-
-/* margin-right: -1.5rem; */
-
-
-/* }
-.column {
-    display: flex;
-    flex-direction: column;
-}
-*/
+/* mobile styling tweaks */
 
 @media screen and (max-width: 767px) {
     main {
@@ -264,7 +270,6 @@ main {
     }
     header {
         width: 100%;
-        /* width: 100%; */
     }
     .form {
         height: 50%;
