@@ -201,13 +201,14 @@ main {
     border: 2px solid var(--orange-btn);
     /* border-style: none; */
     font-size: 15px;
-    max-width: 290px;
-    padding: 8px 50px 8px 50px;
+    max-width: 300px;
+    min-width: 280px;
+    padding: 8px;
     margin-bottom: 20px;
 }
 
 #form__btn-submitted {
-    padding: 8px 67px 8px 66px;
+    padding: 8px;
     background-color: var(--orange-btn-dark);
     border: 2px solid var(--orange-btn-dark);
 }
@@ -314,14 +315,16 @@ main {
         padding: 5px;
     }
     .form__btn-text {
-        padding: 8px 40px 8px 40px;
-    }
-    #form__btn-submitted {
-        padding: 8px 56px 8px 56px;
+        padding: 8px;
+        max-width: 400px;
     }
 }
 
 @media screen and (max-width: 430px) {
+    .form__btn-text {
+        max-width: 200px;
+        min-width: 170px;
+    }
     .ad {
         height: 50%;
         width: 100%;

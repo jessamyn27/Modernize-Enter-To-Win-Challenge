@@ -26,8 +26,6 @@ form.addEventListener("submit", (e) => {
         email: email.value
     }
 
-    let passed = false;
-
     // username
     if (username.value.length <= 1) {
         username.classList.add('required-border')
