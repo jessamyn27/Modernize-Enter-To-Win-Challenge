@@ -1,5 +1,5 @@
 # Modernize-Enter-To-Win-Challenge
-#### take home challenge for Front End Dev at Modernize 
+#### advertorial made with js css and html
 
 
 ## Table of Contents
